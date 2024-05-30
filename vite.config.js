@@ -5,6 +5,12 @@ import vue from '@vitejs/plugin-vue';
 export default defineConfig({
     plugins: [vue()],
     build: {
+        rollupOptions: {
+            input: {
+                main: 'index.html',
+                show: 'show.html'
+            }
+        },
         outDir: 'dist'
     }
 });
