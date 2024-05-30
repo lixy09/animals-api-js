@@ -36,14 +36,13 @@ async function displayAnimalDetails() {
                     </div>
                 `;
             } else {
-                detailContainer.innerHTML = '<p>No details found for this animal.</p>';
+                detailContainer.innerHTML = '<p class="text-xl pl-5 font-mono font-light">No details found for this animal.</p>';
             }
         } catch (error) {
             console.error('Error Fetching data: ', error);
-            detailContainer.innerHTML = '<p>Failed to fetch animal details.</p>';
         }
     } else {
-        detailContainer.innerHTML = '<p>No animal name provided in the query.</p>';
+        detailContainer.innerHTML = '<p class="text-xl pl-5 font-mono font-light">No animal name provided.</p>';
     }
 }
 

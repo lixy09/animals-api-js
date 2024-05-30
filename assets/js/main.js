@@ -21,17 +21,24 @@ async function init() {
  * Function to handle the request from the API
  */
 async function handleRequest() {
+    detailDiv.innerHTML = '';
+    messageDiv.innerHTML = '';
     const animalName = input.value.trim();
     if (animalName) {
         try {
             const { data } = await getAnimal(animalName);
-                if (data.length > 0) {
+            console.log(data);
+                if (data.length !== 0) {
                     if (data.length > 1) {
-                        messageDiv.classList.remove('hidden');
+                        messageDiv.innerHTML = '<p class="text-2xl pl-5 font-mono font-light">Which animal are you looking for?</p>';
                     }
-                    update(data);
+                    if (data.length >= 9) {
+                        messageDiv.innerHTML = '<p class="text-2xl pl-5 font-mono font-light text-red-700">Please try a more specific name.</p>';
+                    } else {
+                        update(data);
+                    }
                 } else {
-                    detailDiv.innerHTML = '<p>No data found for the given animal name.</p>';
+                    detailDiv.innerHTML = '<p class="text-xl pl-5 font-mono font-light text-red-700">Please try a valid name.</p>';
                 }
         } catch (error) {
             console.error('Error Fetching data: ', error);
@@ -43,7 +50,6 @@ async function handleRequest() {
  * Function to update the DOM
  */
 function update(results) {
-    detailDiv.innerHTML = '';
     results.forEach((result) => {
         const animalLink = document.createElement('a');
         animalLink.href = `show.html?name=${encodeURIComponent(result.name)}`;
