@@ -30,10 +30,10 @@ async function handleRequest() {
             console.log(data);
                 if (data.length !== 0) {
                     if (data.length > 1) {
-                        messageDiv.innerHTML = '<p class="text-2xl pl-5 font-mono font-light">Which animal are you looking for?</p>';
+                        messageDiv.innerHTML = '<p class="text-xl pl-5 font-mono font-medium">Which animal are you looking for?</p>';
                     }
                     if (data.length >= 9) {
-                        messageDiv.innerHTML = '<p class="text-2xl pl-5 font-mono font-light text-red-700">Please try a more specific name.</p>';
+                        messageDiv.innerHTML = '<p class="text-xl pl-5 font-mono font-light text-red-700">Please try a more specific name.</p>';
                     } else {
                         update(data);
                     }
@@ -54,7 +54,7 @@ function update(results) {
         const animalLink = document.createElement('a');
         animalLink.href = `show.html?name=${encodeURIComponent(result.name)}`;
         animalLink.textContent = result.name;
-        animalLink.className = 'text-xl font-medium font-mono mb-5 hover:text-lime-700';
+        animalLink.className = 'text-xl font-light font-mono mb-5 hover:text-lime-700';
 
         const animalDiv = document.createElement('div');
         animalDiv.className = 'text-center';
