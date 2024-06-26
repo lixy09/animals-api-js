@@ -1,55 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Animals API</title>
-  <link href="/assets/css/output.css" rel="stylesheet">
-  <script type="module" src="/assets/js/main.js"></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Animals API</title>
+    <link href="/assets/css/output.css" rel="stylesheet">
+    <script type="module" src="/assets/js/main.js"></script>
 </head>
 <body>
-  <nav class="flex items-center px-8 py-8 bg-lime-100 justify-between">
+<nav class="flex items-center px-8 py-8 bg-lime-100 justify-between">
     <p class="hover:text-lime-900 text-2xl font-mono">
-      <a href="index.html">Animals Wiki</a>
+        <a href="index.html">Animals Wiki</a>
     </p>
-  </nav>
+</nav>
 
-<section>
-    <div class="flex justify-center items-center mt-10">
-      <p class="text-xl pl-5 font-mono font-light">Welcome! This is a wiki page for animals!</p>
-    </div>
+<main>
+    <h1 class="flex justify-center items-center mt-10 text-xl pl-5 font-mono font-light">Welcome! This is a wiki page for animals!</h1>
 
-  <div class="flex justify-center items-center mt-10">
-    <form action="" method="GET" class="flex items-center space-x-4">
-      <input class="text-lg text-black font-sans rounded w-80"
-             type="text" name="name" placeholder="Enter the animal's name ..." autofocus>
-      <button type="submit" class="rounded bg-lime-100 text-black hover:bg-yellow-100 px-4 py-1 text-xl">
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
-          <path stroke-linecap="round" stroke-linejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
-        </svg>
-      </button>
-    </form>
-  </div>
+    <section class="flex justify-center items-center mt-10">
+        <form action="" method="GET" class="flex items-center space-x-4">
+            <input class="text-lg text-black font-sans rounded w-80"
+                   type="text" name="name" placeholder="Enter the animal's name ..." autofocus>
+            <button type="submit" class="rounded bg-lime-100 text-black hover:bg-yellow-100 px-4 py-1 text-xl">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                     stroke="currentColor" class="size-6">
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                          d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z"/>
+                </svg>
+            </button>
+        </form>
+    </section>
 
-  <div id="message" class="container text-center mx-auto mt-8">
-  </div>
-  <div id="detail" class="container text-center mx-auto mt-5 mb-8">
-<!--    <a href="show.html" class="text-xl font-medium font-mono mb-5 hover:text-lime-700">test</a>-->
-  </div>
-</section>
+    <section id="message" class="container text-center mx-auto mt-8"></section>
+    <section id="detail" class="container text-center mx-auto mt-5 mb-8">
+        <!-- testing style - <a href="show.html" class="text-xl font-medium font-mono mb-5 hover:text-lime-700">test</a>-->
+    </section>
+</main>
 
-<footer class="mt-auto bg-gray-50 py-8">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<footer class="mt-auto bg-gray-50 py-8 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <nav class="flex justify-center space-x-4">
-      <a href="https://api-ninjas.com/api/animals" target="_blank" class="text-gray-600 hover:text-gray-800">Animals API</a>
-      <a href="https://tailwindui.com/" target="_blank" class="text-gray-600 hover:text-gray-800">Tailwind CSS</a>
+        <a href="https://api-ninjas.com/api/animals" target="_blank" class="text-gray-600 hover:text-gray-800">Animals API</a>
+        <a href="https://tailwindui.com/" target="_blank" class="text-gray-600 hover:text-gray-800">Tailwind CSS</a>
     </nav>
-    <div>
-      <p class="mt-8 text-center text-gray-600">
+    <p class="mt-8 text-center text-gray-600">
         Made by <a href="https://github.com/lixy09" target="_blank" class="underline text-gray-600 hover:text-gray-800">lixy09</a> - 2024
-      </p>
-    </div>
-  </div>
+    </p>
 </footer>
 
 </body>
