@@ -1,4 +1,4 @@
-import {getAnimals} from './api.js';
+import {getAnimal} from './api.js';
 
 // DOM elements
 const detailContainer = document.getElementById('detailContainer');
@@ -11,8 +11,7 @@ async function displayAnimalDetails() {
     const animalName = urlParams.get('name');
     if (animalName) {
         try {
-            const [response] = await getAnimals([animalName]);
-            const { data } = response;
+            const { data } = await getAnimal(animalName);
             if (data.length > 0) {
                 const animal = data[0]; // Assuming the first match is the required one
                 const characteristics = animal.characteristics;

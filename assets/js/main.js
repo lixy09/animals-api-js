@@ -1,4 +1,4 @@
-import {getAnimals} from './api.js';
+import {getAnimal} from './api.js';
 
 // dom elements
 const form = document.querySelector('form');
@@ -23,10 +23,10 @@ async function init() {
 async function handleRequest() {
     detailContainer.innerHTML = '';
     messageContainer.innerHTML = '';
-    const animalNames = input.value.trim();
-    if (animalNames) {
+    const animalName = input.value.trim();
+    if (animalName) {
         try {
-            const { data } = await getAnimals(animalNames);
+            const { data } = await getAnimal(animalName);
             console.log(data);
                 if (data.length !== 0) {
                     if (data.length > 1) {

@@ -22,14 +22,13 @@ const fetchData = async (url) => {
 };
 
 /**
-   * Fetches items from the API
-   * @param names - The ID of the item
+   * Fetches a single item from the API
+   * @param name - The ID of the item
    * @returns Promise| Error
    */
-const getAnimals = async (names) => {
-    const urls = names.map(name => `${apiRoot}?name=${encodeURIComponent(name)}`);
-    const promises = urls.map(url => fetchData(url));
-    return await Promise.all(promises);
+const getAnimal = async (name) => {
+    const url = `${apiRoot}?name=${encodeURIComponent(name)}`;
+    return await fetchData(url);
 };
 
-export { getAnimals };
+export { getAnimal };
