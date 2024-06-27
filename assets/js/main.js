@@ -1,4 +1,4 @@
-import {getAnimal} from './api.js';
+import {getAnimals} from './api.js';
 
 // dom elements
 const form = document.querySelector('form');
@@ -23,11 +23,12 @@ async function init() {
 async function handleRequest() {
     detailContainer.innerHTML = '';
     messageContainer.innerHTML = '';
-    const animalName = input.value.trim();
-    if (animalName) {
+    const animalNames = input.value.trim().split(',').map(name => name.trim());
+    if (animalNames.length > 0) {
         try {
-            const { data } = await getAnimal(animalName);
-            console.log(data);
+            const results = await getAnimals(animalNames);
+            console.log(results);
+            results.forEach(({ data }) => {
                 if (data.length !== 0) {
                     if (data.length > 1) {
                         messageContainer.innerHTML = '<p class="text-xl pl-5 font-mono font-medium">Which animal are you looking for?</p>';
@@ -40,6 +41,7 @@ async function handleRequest() {
                 } else {
                     detailContainer.innerHTML = '<p class="text-xl pl-5 font-mono font-light text-red-700">Please try a valid name.</p>';
                 }
+            });
         } catch (error) {
             console.error('Error Fetching data: ', error);
         }
